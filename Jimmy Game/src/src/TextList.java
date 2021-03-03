@@ -144,6 +144,15 @@ class AvailableText {
 	private Text finalRoom2 = new Text("You assemble the remote and flip on the telly.");
 	private Text finalRoom3 = new Text("You suddenly feel an ominous presence behind you.");
 	private Text finalRoom4 = new Text("Add the wrestling with Jimmy match here");
+	
+	private MoreText fightText1 = new MoreText("suplex");
+	private Text fight1_1 = new Text("You rush up behind Jimmy and hit him with a fat suplex");
+	
+	private MoreText fightText2 = new MoreText("punch");
+	private Text fight2_1 = new Text("You carefully brace yourself as you jab at Jimmy");
+	
+	private MoreText fightText3 = new MoreText("defend");
+	private Text fight3_1 = new Text("You prepare for Jimmy's attack");
 
 	
 	
@@ -183,5 +192,15 @@ class AvailableText {
 		finalRoomText.addText(finalRoom3);
 		finalRoomText.addText(finalRoom4);
 		textList.addText(finalRoomText);
+		
+		//Fight stuff
+		fightText1.addText(fight1_1);
+		textList.addText(fightText1);
+		
+		fightText2.addText(fight2_1);
+		textList.addText(fightText2);
+		
+		fightText3.addText(fight3_1);
+		textList.addText(fightText3);
 	}
 }

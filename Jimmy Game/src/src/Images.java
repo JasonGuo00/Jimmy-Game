@@ -1,7 +1,6 @@
 package src;
 
 import java.awt.Container;
-import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;

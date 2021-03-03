@@ -6,6 +6,8 @@ import java.awt.event.MouseListener;
 
 
 public class MouseClick implements MouseListener {
+	
+	public static Fightscreen fight;
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
@@ -19,6 +21,11 @@ public class MouseClick implements MouseListener {
 		else {
 			if(!(Game.currentRoom.equals("finalRoom"))) {
 				Game.game.switchToButton();
+			}
+			// Initiate the jimmy wrestle here
+			else{
+				Game.game.newScreen();
+				fight = new Fightscreen();
 			}
 		}
 		
