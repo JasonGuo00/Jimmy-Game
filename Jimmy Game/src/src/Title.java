@@ -15,15 +15,16 @@ import javax.swing.JPanel;
 
 public class Title {
 	
-	private JPanel titlePanel;
-	private Container container;
-	private JLabel titleLabel;
-	private JButton startButton;
-	private JPanel buttonPanel;
+	JPanel titlePanel;
+	Container container;
+	JLabel titleLabel;
+	JButton startButton;
+	JPanel buttonPanel;
+	
 	
 	public Title() {
 		//Allows for content to be expressed in the functional GUI part of the window
-		container = Game.game.getWindow().getContentPane();	
+		container = Game.game.getWindow().getContentPane();
 		//Making Title Panel
 		titlePanel = new JPanel();
 		titlePanel.setBounds(200, 50, 600, 150);
@@ -34,8 +35,8 @@ public class Title {
 		Font font = new Font("Times New Roman", Font.BOLD, 100);
 		titleLabel.setFont(font);
 		titlePanel.add(titleLabel);
-		
 		//Making Start Button
+		
 		buttonPanel = new JPanel();
 		buttonPanel.setBounds(300, 500, 400, 100);
 		buttonPanel.setBackground(Color.black);
@@ -49,7 +50,7 @@ public class Title {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				Game.game.newScreen();
-				new Info();
+				new MainGame();
 			}
 		});
 		buttonPanel.add(startButton);

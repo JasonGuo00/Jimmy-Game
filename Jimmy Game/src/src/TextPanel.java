@@ -15,7 +15,6 @@ public class TextPanel {
 	private JTextArea textArea;
 	private Container container = Game.game.getWindow().getContentPane();
 	MouseClick click = new MouseClick();
-
 	
 	public TextPanel() {
 		textPanel = new JPanel();

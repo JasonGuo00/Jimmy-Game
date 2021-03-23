@@ -55,26 +55,26 @@ public class TextList {
 class MoreText {
 	
 	private String id;
-	private ArrayList<Text> book;
+	private ArrayList<Text> jimmy;
 	private int index = 0;
 	
 	public MoreText(String id) {
-		book = new ArrayList<Text>();
+		jimmy = new ArrayList<Text>();
 		this.id = id;
 	}
 	
-	public void addText(Text pages) {
-		book.add(pages);
+	public void addText(Text bababooey) {
+		jimmy.add(bababooey);
 	}
 	
 	public String nextPage() {
-		String str = "";
+		String str = "Add Buttons Here";
 		if(index == 0) {
-			str = book.get(0).getText();
+			str = jimmy.get(0).getText();
 			index++;
 		}
-		else if(index < book.size()) {
-			str = book.get(index).getText();
+		else if(index < jimmy.size()) {
+			str = jimmy.get(index).getText();
 			index++;
 		}
 		return str;
@@ -93,7 +93,7 @@ class MoreText {
 	}
 	
 	public int getSize() {
-		return book.size();
+		return jimmy.size();
 	}
 }
 
@@ -115,7 +115,11 @@ class Text {
 class AvailableText {
 	public static TextList textList = new TextList(); 
 	
-	
+	private MoreText startRoomText = new MoreText("start");
+	private Text startText1 = new Text("You open your eyes to a flash of white light.");
+	private Text startText2 = new Text("You're sitting on a dusty, grimy couch with a static TV in front of you.");
+	private Text startText3 = new Text("You don't know why, but you feel an intense urge to flip on the telly.  However, there's no remote in sight.");
+	private Text startText4 = new Text("You look behind your back and can see the outline of a dark hallway.  You get up.");
 	
 	private MoreText hallwayText = new MoreText("hallway");
 	private Text hallway = new Text("You walk down the hallway.");
@@ -125,32 +129,34 @@ class AvailableText {
 	private MoreText room1Text = new MoreText("room1");
 	private Text room1_1 = new Text("Down the dark hallway you see a door.  You decide to open it.");
 	private Text room1_2 = new Text("You find yourself in a dark room, dimy lit by a small candle atop an old wooden desk.");
-	private Text room1_3 = new Text("You walk up to the desk and search around.  Rummaging through the drawers, you find a Remote.  However, it's missing a Power Button and Batteries");
+	private Text room1_3 = new Text("You walk up to the desk and search around.  Rummaging through the drawers, you find a Damiel.");
 	private Text room1_4 = new Text("There doesn't seem to be anything else of interest in the room.  You decide to head back out into the dark hallways.");
 	
 	private MoreText room2Text = new MoreText("room2");
-    private Text room2_1 = new Text("You walk into a room and see a poker table.");
-    private Text room2_2 = new Text("You see a pack of triple A batteries on the table realize you'll have to play for them.");
-    private Text room2_3 = new Text("You sit down at the table and you get ready to play.");
-    private Text room2_4 = new Text("You remember that you no idea how to play poker and that you're alone.");
-    private Text room2_5 = new Text("You take the batteries and leave the room.");
+	private Text room2_1 = new Text("You walk into a room.  You explode.");
 	
 	private MoreText room3Text = new MoreText("room3");
-    private Text room3_1 = new Text("You walk into a dim room that has one small lightbulb on the ceiling weakly illuminating a table.");
-    private Text room3_2 = new Text("You find an old Nintendo DS on center of the table. You pick it up and inspect it.");
-    private Text room3_3 = new Text("The Nintendo DS has the power button the remote control is missing.");
-    private Text room3_4 = new Text("You take the power button off the Nintendo DS and keep it in you pocket. You walk out into the dark hallways.");
+	private Text room3_1 = new Text("Baba");
+	private Text room3_2 = new Text("Booey");
 	
 	private MoreText finalRoomText = new MoreText("finalRoom");
 	private Text finalRoom1 = new Text("You head back to the TV room.");
 	private Text finalRoom2 = new Text("You assemble the remote and flip on the telly.");
 	private Text finalRoom3 = new Text("You suddenly feel an ominous presence behind you.");
+
+	private MoreText jimmyWin = new MoreText("jimmyWin");
+	private Text jimmyW_1 = new Text("\"If you know the enemy and know yourself you need not fear the results of a hundred battles. . .\"");
+	private Text jimmyW_2 = new Text("\"I feared this battle.\"");
+	private Text jimmyW_3 = new Text("\"The supreme art of war is to subdue the enemy without fighting.\"");
+	private Text jimmyW_4 = new Text("\"This cold one is giving me chills.\"");
+	private Text jimmyW_5 = new Text("A bright light begins to shine before you.");
+	private Text jimmyW_6 = new Text("You guess you'll just close your eyes.");
+	private Text jimmyW_7 = new Text("You win!");
 	
-	private MoreText startRoomText = new MoreText("start");
-	private Text startText1 = new Text("You open your eyes to a flash of white light.");
-	private Text startText2 = new Text("You're sitting on a dusty, grimy couch with a static TV in front of you.");
-	private Text startText3 = new Text("You don't know why, but you feel an intense urge to flip on the telly.  However, there's no remote in sight.");
-	private Text startText4 = new Text("You look behind your back and can see the outline of a dark hallway.  You get up.");
+	private MoreText jimmyLose = new MoreText("jimmyLose");
+	private Text jimmyL_1 = new Text("\"Know thy self, know thy enemy. A thousand battles, a thousand victories.\"");
+	private Text jimmyL_2 = new Text("\"Say it ain't so.\"");
+	private Text jimmyL_3 = new Text("You just lost the game.");
 	
 	public AvailableText() {
 		//Starting Room text
@@ -175,17 +181,11 @@ class AvailableText {
 		
 		//Room 2 text
 		room2Text.addText(room2_1);
-        room2Text.addText(room2_2);
-        room2Text.addText(room2_3);
-        room2Text.addText(room2_4);
-        room2Text.addText(room2_5);
-        textList.addText(room2Text);
+		textList.addText(room2Text);
 		
 		//Room 3 text
 		room3Text.addText(room3_1);
 		room3Text.addText(room3_2);
-		room3Text.addText(room3_3);
-        room3Text.addText(room3_4);
 		textList.addText(room3Text);
 		
 		//Final Room Text
@@ -194,5 +194,20 @@ class AvailableText {
 		finalRoomText.addText(finalRoom3);
 		textList.addText(finalRoomText);
 		
+		//Win text
+		jimmyWin.addText(jimmyW_1);
+		jimmyWin.addText(jimmyW_2);
+		jimmyWin.addText(jimmyW_3);
+		jimmyWin.addText(jimmyW_4);
+		jimmyWin.addText(jimmyW_5);
+		jimmyWin.addText(jimmyW_6);
+		jimmyWin.addText(jimmyW_7);
+		textList.addText(jimmyWin);
+		
+		//Lose text
+		jimmyLose.addText(jimmyL_1);
+		jimmyLose.addText(jimmyL_2);
+		jimmyLose.addText(jimmyL_3);
+		textList.addText(jimmyLose);
 	}
 }
