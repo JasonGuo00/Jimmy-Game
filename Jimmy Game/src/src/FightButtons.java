@@ -17,7 +17,7 @@ public class FightButtons {
 	
 	public FightButtons() {
 		Border border = BorderFactory.createLineBorder(Color.white, 3);
-		button1 = new JButton("Reckless Suplex");
+		button1 = new JButton("Suplex");
 		button1.setBackground(Color.black);
 		button1.setForeground(Color.white);
 		button1.setBounds(100, 550, 200, 100);
@@ -28,9 +28,11 @@ public class FightButtons {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				int damage = (int) (Math.random() * 9 + 10);
+				int damage2 = (int)(Math.random() * 19);
 				MouseClick.fight.changeJHP(damage);
-				MouseClick.fight.changeYHP((int)(Math.random() * 19));
-				
+				MouseClick.fight.changeYHP(damage2);
+				MouseClick.fight.updateText("You surprise Jimmy with a suplex, dealing " + damage + " damage. He retaliates, dealing " + damage2 + " damage.");
+				MouseClick.fight.checkWin();
 			}
 		});
 		
@@ -45,8 +47,11 @@ public class FightButtons {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				int damage = (int) (Math.random() * 4 + 5);
+				int damage2 = (int)(Math.random() * 15);
 				MouseClick.fight.changeJHP(damage);
-				MouseClick.fight.changeYHP((int)(Math.random() * 15) );
+				MouseClick.fight.changeYHP(damage2);
+				MouseClick.fight.updateText("You strike swiftly and carefully, ready to dodge. You deal " + damage + " damage. Enraged, Jimmy punches back, dealing " + damage2 + " damage.");
+				MouseClick.fight.checkWin();
 			}
 		});
 		
@@ -60,7 +65,10 @@ public class FightButtons {
 		button3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				MouseClick.fight.changeYHP((int)(Math.random() * 5));
+				int damage = (int)(Math.random() * 5);
+				MouseClick.fight.changeYHP(damage);
+				MouseClick.fight.updateText("Reacting quickly, you block Jimmy's incoming attack, taking only " + damage + " damage.");
+				MouseClick.fight.checkWin();
 			}
 		});
 		

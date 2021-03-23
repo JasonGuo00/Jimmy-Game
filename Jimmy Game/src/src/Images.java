@@ -53,6 +53,9 @@ class AvailableImages {
 	private Images room2 = new Images("wip.png", "room2");
 	private Images room3 = new Images("wip.png", "room3");
 	private Images finalRoom = new Images("start.png", "finalRoom");
+	private Images jimmy = new Images("jimby.gif", "jimmyFight");
+	private Images jimmyWin = new Images("jimmy_hurt.png", "jimmyWin");
+	private Images jimmyLose = new Images("jimby.gif", "jimmyLose");
 	
 	public AvailableImages() {
 		imageList.addImage(startRoom);
@@ -61,6 +64,9 @@ class AvailableImages {
 		imageList.addImage(room2);
 		imageList.addImage(room3);
 		imageList.addImage(finalRoom);
+		imageList.addImage(jimmy);
+		imageList.addImage(jimmyWin);
+		imageList.addImage(jimmyLose);
 	}
 }
 
@@ -79,5 +85,10 @@ class DrawImage {
 		imageLabel.setIcon(imageIcon);
 		container.add(imageLabel);
 		
+	}
+	
+	public void changeBounds(int x, int y, int width, int height) {
+		imageLabel.setBounds(x, y, width, height);
+		imageLabel.setIcon(imageIcon);
 	}
 }

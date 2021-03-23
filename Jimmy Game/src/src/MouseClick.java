@@ -20,7 +20,11 @@ public class MouseClick implements MouseListener {
 		}
 		else {
 			if(!(Game.currentRoom.equals("finalRoom"))) {
-				Game.game.switchToButton();
+				
+				if (!(Game.currentRoom.equals("jimmyWin") || Game.currentRoom.equals("jimmyLose"))) {
+					Game.game.switchToButton();
+				}
+
 			}
 			// Initiate the jimmy wrestle here
 			else{

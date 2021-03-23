@@ -78,17 +78,17 @@ public class Game {
 				currentRoom = "finalRoom";
 				return currentRoom;
 			}
-			else if(randomNumber >= 70 && randomNumber < 80 && !key1) {
+			else if(randomNumber >= 25 && randomNumber < 50 && !key1) {
 				currentRoom = "room1";
 				key1 = true;
 				return currentRoom;
 			}
-			else if(randomNumber >= 80 && randomNumber < 90 && !key2) {
+			else if(randomNumber >= 50 && randomNumber < 75 && !key2) {
 				currentRoom = "room2";
 				key2 = true;
 				return currentRoom;
 			}
-			else if(randomNumber >= 90 && randomNumber < 100 && !key3) {
+			else if(randomNumber >= 75 && randomNumber < 100 && !key3) {
 				currentRoom = "room3";
 				key3 = true;
 				return currentRoom;

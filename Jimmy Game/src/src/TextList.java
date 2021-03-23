@@ -143,18 +143,20 @@ class AvailableText {
 	private Text finalRoom1 = new Text("You head back to the TV room.");
 	private Text finalRoom2 = new Text("You assemble the remote and flip on the telly.");
 	private Text finalRoom3 = new Text("You suddenly feel an ominous presence behind you.");
-	private Text finalRoom4 = new Text("Add the wrestling with Jimmy match here");
-	
-	private MoreText fightText1 = new MoreText("suplex");
-	private Text fight1_1 = new Text("You rush up behind Jimmy and hit him with a fat suplex");
-	
-	private MoreText fightText2 = new MoreText("punch");
-	private Text fight2_1 = new Text("You carefully brace yourself as you jab at Jimmy");
-	
-	private MoreText fightText3 = new MoreText("defend");
-	private Text fight3_1 = new Text("You prepare for Jimmy's attack");
 
+	private MoreText jimmyWin = new MoreText("jimmyWin");
+	private Text jimmyW_1 = new Text("\"If you know the enemy and know yourself you need not fear the results of a hundred battles. . .\"");
+	private Text jimmyW_2 = new Text("\"I feared this battle.\"");
+	private Text jimmyW_3 = new Text("\"The supreme art of war is to subdue the enemy without fighting.\"");
+	private Text jimmyW_4 = new Text("\"This cold one is giving me chills.\"");
+	private Text jimmyW_5 = new Text("A bright light begins to shine before you.");
+	private Text jimmyW_6 = new Text("You guess you'll just close your eyes.");
+	private Text jimmyW_7 = new Text("You win!");
 	
+	private MoreText jimmyLose = new MoreText("jimmyLose");
+	private Text jimmyL_1 = new Text("\"Know thy self, know thy enemy. A thousand battles, a thousand victories.\"");
+	private Text jimmyL_2 = new Text("\"Say it ain't so.\"");
+	private Text jimmyL_3 = new Text("You just lost the game.");
 	
 	public AvailableText() {
 		//Starting Room text
@@ -190,17 +192,22 @@ class AvailableText {
 		finalRoomText.addText(finalRoom1);
 		finalRoomText.addText(finalRoom2);
 		finalRoomText.addText(finalRoom3);
-		finalRoomText.addText(finalRoom4);
 		textList.addText(finalRoomText);
 		
-		//Fight stuff
-		fightText1.addText(fight1_1);
-		textList.addText(fightText1);
+		//Win text
+		jimmyWin.addText(jimmyW_1);
+		jimmyWin.addText(jimmyW_2);
+		jimmyWin.addText(jimmyW_3);
+		jimmyWin.addText(jimmyW_4);
+		jimmyWin.addText(jimmyW_5);
+		jimmyWin.addText(jimmyW_6);
+		jimmyWin.addText(jimmyW_7);
+		textList.addText(jimmyWin);
 		
-		fightText2.addText(fight2_1);
-		textList.addText(fightText2);
-		
-		fightText3.addText(fight3_1);
-		textList.addText(fightText3);
+		//Lose text
+		jimmyLose.addText(jimmyL_1);
+		jimmyLose.addText(jimmyL_2);
+		jimmyLose.addText(jimmyL_3);
+		textList.addText(jimmyLose);
 	}
 }
