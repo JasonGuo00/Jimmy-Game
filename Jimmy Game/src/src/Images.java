@@ -50,12 +50,10 @@ class AvailableImages {
 	private Images startRoom = new Images("start.png", "start");
 	private Images hallway = new Images("hallway.png", "hallway");
 	private Images room1 = new Images("room1.png", "room1");
-	private Images room2 = new Images("wip.png", "room2");
-	private Images room3 = new Images("wip.png", "room3");
+	private Images room2 = new Images("Room2.png", "room2");
+	private Images room3 = new Images("Room3.png", "room3");
 	private Images finalRoom = new Images("start.png", "finalRoom");
-	private Images jimmy = new Images("jimby.gif", "jimmyFight");
-	private Images jimmyWin = new Images("jimmy_hurt.png", "jimmyWin");
-	private Images jimmyLose = new Images("jimby.gif", "jimmyLose");
+	private Images imagePage = new Images("info.png", "info");
 	
 	public AvailableImages() {
 		imageList.addImage(startRoom);
@@ -64,9 +62,7 @@ class AvailableImages {
 		imageList.addImage(room2);
 		imageList.addImage(room3);
 		imageList.addImage(finalRoom);
-		imageList.addImage(jimmy);
-		imageList.addImage(jimmyWin);
-		imageList.addImage(jimmyLose);
+		imageList.addImage(imagePage);
 	}
 }
 
@@ -83,12 +79,28 @@ class DrawImage {
 		//images loaded in will be 800 x 450
 		imageLabel.setBounds(100, 50, 800, 450);
 		imageLabel.setIcon(imageIcon);
-		container.add(imageLabel);
-		
-	}
-	
-	public void changeBounds(int x, int y, int width, int height) {
-		imageLabel.setBounds(x, y, width, height);
-		imageLabel.setIcon(imageIcon);
+		container.add(imageLabel);	
 	}
 }
+
+
+class DrawSpecificImage {
+	private JLabel imageLabel;
+	private ImageIcon imageIcon;
+	private Container container = Game.game.getWindow().getContentPane();
+	//Used to draw specific images passed into the constructor rather than using the static currentRoom variable
+	public DrawSpecificImage(String imgName) {
+		if(getClass().getResource(AvailableImages.imageList.getImage(imgName)) != null) {
+			imageIcon = new ImageIcon(getClass().getResource(AvailableImages.imageList.getImage(imgName)));
+		}
+		System.out.println(getClass().getResource(AvailableImages.imageList.getImage(imgName)));
+		imageLabel = new JLabel();
+		//images loaded in will be 800 x 450
+		imageLabel.setBounds(100, 50, 800, 450);
+		imageLabel.setIcon(imageIcon);
+		container.add(imageLabel);
+	}
+	
+}
+	
+
