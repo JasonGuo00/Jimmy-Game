@@ -11,6 +11,7 @@ public class Game {
 	//Actual window of the game
 	private JFrame window;
 	public static Game game;
+	public AvailableImages availableImage = new AvailableImages();
 	public static String currentRoom = "start";
 	private boolean key1 = false;
 	private boolean key2 = false;
